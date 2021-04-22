@@ -1,0 +1,163 @@
+/* Navbar */
+.navbar-dark {
+  padding-left: 5%;
+}
+
+/* indo.html */
+.main-page {
+  background-image: url("https://media-public.canva.com/MADGx7Yo4SY/4/screen_2x.jpg");
+  
+}
+
+/* Welcome-Page */
+.welcome-container {
+  height: 500px;
+  background-color: #ffb037;
+  padding: 7% 15%;
+}
+
+.p-tags {
+    padding: 3rem 0;
+}
+
+.features {
+    font-weight: 600;
+    line-height: 1;
+}
+
+
+.big-header {
+  font-size: 3rem;
+  color: #364547;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  margin: 2%;
+  line-height: 1;
+}
+
+.sub-header {
+  color: #1b1a17;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  margin: 1%;
+}
+
+/* Forms */
+.form-container {
+  padding: 5.5% 20%;
+  min-height: 465px;
+}
+
+.wtform-div {
+  padding: 3%;
+}
+
+/* Footer */
+.footer-container {
+  text-align: center;
+  background-color: #364547;
+  padding: 2% 0;
+}
+
+/* Dashboard */
+.dashboard-section {
+    background-color: #b4aee8;
+    padding: 3%;
+}
+
+.dashboard {
+    background-color: #e2d5d5;
+    padding-top: 3%;
+    min-height: 500px;
+}
+
+.button-div {
+    text-align: right;
+    padding-top: 3px;
+}
+
+.dash-heading {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.boards {
+  display: flex;
+  overflow-x: auto;
+  padding: 3%;
+  background-color: #e2d5d5;
+  position: relative;
+}
+
+
+.board {
+  text-align: center;
+  min-height: 100%;
+  min-width: 30%;
+  margin: 5%;
+  border: solid;
+  height: auto;
+  border-radius: 10px;
+  padding: 3%;
+  background-color: #d8e3e7;
+  position: relative;
+
+}
+
+.tag-header {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #7b113a;
+}
+
+.task-div {
+  text-align: left;
+  margin: 3%;
+  padding: 3%;
+  border: solid;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #bdc7c9;
+  position: relative;
+}
+
+.desc-div {
+  padding: 1.5%;
+  margin: auto;
+  border: 1px solid;
+  border-radius: 12px;
+  background-color: #eeebdd;
+}
+
+.task-name {
+  margin: 3% 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+}
+
+/* Buttons */
+.add-board-btn {
+    position: absolute;
+    top: 3%;
+    right: 5%;
+}
+
+.edit-task-btn {
+  font-weight: bold;
+  text-align: center;
+  border-radius: 100%;
+}
+
+.delete-task-btn {
+  font-weight: bold;
+  text-align: center;
+  border-radius: 100%;
+}
+
+.check-box {
+  border-radius: 100%;
+}

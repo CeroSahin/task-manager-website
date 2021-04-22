@@ -1,0 +1,66 @@
+{% include 'header.html' %}
+
+
+</section>
+<section class="dashboard-section">
+    <div class="dashboard">
+        <h1 style="margin-left: 8%;" class="dash-heading">Welcome {{ current_user.username }},</h1>
+        <div class="boards">
+            <a href="{{ url_for('add_new_tag') }}" type="button" class="add-board-btn btn btn-warning btn-sm">Add Board
+                <i class="fas fa-plus"></i></a>
+            {% for tag in tags %}
+            <div class="board">
+                <h3 class="tag-header">{{ tag.tag_name }}</h3>
+                <div class="board-buttons">
+                    <p style="text-align:right;">
+                        <a style="position:absolute; right:20px; top:10px;" type="button"
+                           href="{{ url_for('add_task') }}"
+                           class="btn btn-primary btn-sm"><i class="fas fa-plus"></i></a>
+                        <a style="position:absolute; right:60px; top:10px;" type="button"
+                           href="{{ url_for('delete_tag', tag_id=tag.id) }}" class="btn btn-danger btn-sm"><i
+                                class="fas fa-trash-alt"></i></a>
+                    </p>
+                </div>
+                {% for task in user_tasks %}
+                {% if task.tag_id == tag.id %}
+                <div class="task-div">
+
+                    {% if task.progress == 0 %}
+                    <h3 class="task-name">{{ task.title }}</h3>
+                    {% else %}
+                    <h3 class="task-name" style="text-decoration: line-through;">{{ task.title }}</h3>
+                    {% endif %}
+
+                    <div class="desc-div">
+                        <p class="task-desc">{{ task.description }}</p>
+                    </div>
+                    {% if not task.due_date is none %}
+                    <p><b>📅</b>Due: {{ task.due_date }}</p>
+                    {% endif %}
+                    <div class="button-div">
+                        <p style="text-align: right;">
+                            <a type="button" href="{{ url_for('edit_task', task_id=task.id) }}"
+                               class="edit-task-btn btn btn-outline-light btn-sm"><i class="fas fa-edit"></i></a>
+                            <a href="{{ url_for('delete_task', task_id=task.id) }}" type="button"
+                               class="delete-task-btn btn btn-outline-danger btn-sm"><i
+                                    class="fas fa-trash-alt"></i></a>
+                            {% if task.progress == 0 %}
+                            <a href="{{ url_for('done', task_id=task.id) }}" type="button"
+                               class="check-box btn btn-outline-success btn-sm"><i class="far fa-circle"></i></a>
+                            {% else %}
+                            <a href="{{ url_for('done', task_id=task.id) }}" type="button"
+                               class="check-box btn btn-outline-dark btn-sm"><i class="fas fa-check"></i></a>
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% include 'footer.html' %}

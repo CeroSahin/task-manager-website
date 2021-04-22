@@ -1,0 +1,26 @@
+{% include 'header.html' %}
+
+    <div class="welcome-container">
+      <div class="row">
+        <div class="col-lg-6 col-md-10">
+          <h1 class="big-header">Welcome to JoyLead!</h1>
+          <h3 class="sub-header">where you can lead your work with joy...</h3>
+        </div>
+        <div class="col-lg-6 col-md-10">
+          <div class="p-tags">
+          <p class="features"><i class="fas fa-check-circle"></i> Kanban-style task manager</p>
+          <p class="features"><i class="fas fa-check-circle"></i> 100% Free</p>
+          <p class="features"><i class="fas fa-check-circle"></i> Easy to use</p>
+          </div>
+          {% if not current_user.is_authenticated %}
+          <div class="new-user-options">
+          <h3 class="sub-header">What are you waiting for?</h3>
+          <a href="{{ url_for('register') }}" class="btn btn-outline-dark btn-lg" type="button" name="button">Get started <i class="fas fa-arrow-right"></i></a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    </section>
+
+{% include 'footer.html' %}

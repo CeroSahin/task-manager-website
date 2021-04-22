@@ -1,0 +1,21 @@
+{% include 'header.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+<div class="form-container">
+    <h1 class="big-header">Register</h1>
+    <div class="wtform-div">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <p style="color:red;">{{ message }}</p>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {{ wtf.quick_form(form, novalidate=True, button_map={'submit': 'warning'}) }}
+    </div>
+</div>
+</section>
+
+{% include 'footer.html' %}

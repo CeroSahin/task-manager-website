@@ -1,0 +1,25 @@
+{% include 'header.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+<div class="form-container">
+    {% if not is_edit: %}
+    <h1 class="big-header">Add New Card</h1>
+    {% else %}
+    <h1 class="big-header">Edit your Card</h1>
+    {% endif %}
+    <div class="wtform-div">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class=flashes>
+            {% for message in messages %}
+            <p style="color:red;">{{ message }}</p>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {{ wtf.quick_form(form, novalidate=True, button_map={'submit': 'warning'}) }}
+    </div>
+</div>
+</section>
+
+{% include 'footer.html' %}
